@@ -1,0 +1,18 @@
+<% @journals.each do |journal| %>
+TY  - JOUR
+TI  - <%= journal.title %>
+JF  - <%= journal.journal_title %>
+VL  - <%= journal.volumn.gsub( /(^\d*) \((\d*)\)$/, "\\1\nIS - \\2") %>
+SP  - <%= journal.between.gsub( /(^\d+)-(\d+)/, "\\1\nEP  - \\2") %>
+KW  - CMRC
+KW  - <%= journal.theme %>
+KW  - <%= journal.project_code %>
+PB  - <%= journal.publisher %>
+SN  - <%= journal.series %>
+<%= journal.authors.gsub(/(([ÓO][ '’])?[A-Z][\w\-]+)[,\s]*((\-?[A-Z]\.\s*)+)[$,(\sand)]*\s*/, "AU  - \\1, \\3\n") %>
+PY  - <%= journal.year_text %>
+UR  - <%= journal.url %>
+ER  - 
+
+
+<% end %>

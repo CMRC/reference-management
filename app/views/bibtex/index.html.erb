@@ -1,0 +1,11 @@
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+ 
+<% @journals.each do |journal| %>
+  <tr>
+    <td><%= journal.title %></td>
+  </tr>
+<% end %>
+</table>

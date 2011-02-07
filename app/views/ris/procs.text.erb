@@ -1,0 +1,17 @@
+<% @procs.each do |proc| %>
+TY  - CONF
+TI  - <%= proc.title %>
+KW  - CMRC
+CY  - <%= proc.location %>
+JF  - <%= proc.proceedings_of %>
+JF  - <%= proc.conference %>
+KW  - <%= proc.theme %>
+KW  - <%= proc.project_code %>
+PB  - <%= proc.publisher %>
+<%= proc.authors.gsub(/(([ÓO][ '’])?[A-Z][\w\-]+)[,\s]*((\-?[A-Z]\.\s*)+)[$,(\sand)]*\s*/, "AU  - \\1, \\3\n") %>
+PY  - <%= proc.year_text %>
+UR  - <%= proc.url %>
+ER  - 
+
+
+<% end %>

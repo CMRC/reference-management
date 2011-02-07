@@ -1,0 +1,14 @@
+<% @reports.each do |report| %>
+TY  - RPRT
+TI  - <%= report.title %>
+KW  - CMRC
+KW  - <%= report.theme %>
+KW  - <%= report.project_code %>
+PB  - <%= report.publisher %>
+<%= report.authors.gsub(/([\w\-\s'`]+)[,\s]*((\-?\w\.?\s*)+)[$,(\s|and)]*\s*/, "AU  - \\1, \\3\n") %>
+PY  - <%= report.year_text %>
+UR  - <%= report.url %>
+ER  - 
+
+
+<% end %>

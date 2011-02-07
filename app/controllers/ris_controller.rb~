@@ -1,0 +1,7 @@
+class RisController < ApplicationController
+  def index
+    @journals = PubJournal.all
+
+  end
+
+end

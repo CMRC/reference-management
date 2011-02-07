@@ -1,0 +1,15 @@
+<% @theses.each do |thesis| %>
+TY  - THES
+TI  - <%= thesis.title %>
+KW  - CMRC
+KW  - <%= thesis.theme %>
+KW  - <%= thesis.project_code %>
+PB  - <%= thesis.university %>
+N1  - <%= thesis.type_thesis %>
+<%= thesis.authors.gsub(/(([ÓO][ '’])?[A-Z][\w\-]+)[,\s]*((\-?[A-Z]\.\s*)+)[$,(\sand)]*\s*/, "AU  - \\1, \\3\n") %>
+PY  - <%= thesis.year_date %>
+UR  - <%= thesis.url %>
+ER  - 
+
+
+<% end %>
